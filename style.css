@@ -51,7 +51,7 @@ body {
     left: 0;
     background-color: var(--blue);
     height: 3px;
-    width: 50%; /* starts at 0% because it will dynamically increase as the user progresses through the steps */
+    width: 0%; /* starts at 0% because it will dynamically increase as the user progresses through the steps */
     z-index: -1; /* so that the progress bar appears behind the step bubbles */
     transition: 0.4s ease;
     transform: translateY(-40%); 
