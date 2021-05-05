@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+    --blue: #3498db;
+    --gray: #e0e0e0;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -24,4 +31,71 @@ body {
     margin-bottom: 30px;
     max-width: 100%;
     width: 350px;
+}
+
+.progress-container::before {
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: var(--gray);
+    height: 3px;
+    width: 100%;
+    z-index: -1; 
+    transform: translateY(-40%); 
+}
+
+.progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: var(--blue);
+    height: 3px;
+    width: 50%; /* starts at 0% because it will dynamically increase as the user progresses through the steps */
+    z-index: -1; /* so that the progress bar appears behind the step bubbles */
+    transition: 0.4s ease;
+    transform: translateY(-40%); 
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid var(--gray);
+    
+    /* center text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .4s ease;
+}
+
+.circle.active {
+    border-color: var(--blue);
+}
+
+.btn {
+    font-family: 'Muli', sans-serif;
+    background-color: var(--blue);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 30px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
 }
